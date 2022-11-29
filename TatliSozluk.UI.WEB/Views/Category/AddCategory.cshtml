@@ -8,18 +8,18 @@
 <br />
 @using (Html.BeginForm("AddCategory","Category",FormMethod.Post))
 {
-    <div class="form-group">
-        @Html.Label("Kategori Adı")
-        @Html.TextBoxFor(x=>x.CategoryName)
-        @Html.ValidationMessageFor(x=>x.CategoryName)
-        <br /> <br />
-        @Html.Label("Açıklamayı Yazınız")
-        @Html.TextBoxFor(x=>x.CategoryDescription)
-        @Html.ValidationMessageFor(x=>x.CategoryDescription)
-        <br /> <br />
-        <button>Kaydet</button>
+<div class="form-group">
+    @Html.Label("Kategori Adı")
+    @Html.TextBoxFor(x => x.CategoryName)
+    @Html.ValidationMessageFor(x => x.CategoryName) @*Hatalı girilince validation mesajı gözükecek.*@
+    <br /> <br />
+    @Html.Label("Açıklamayı Yazınız")
+    @Html.TextBoxFor(x => x.CategoryDescription)
+    @Html.ValidationMessageFor(x => x.CategoryDescription)  @*Hatalı girilince validation mesajı gözükecek.*@
+    <br /> <br />
+    <button>Kaydet</button>
 
-    </div>
+</div>
 }
 <!--<form class="form-group" method="post">
     <input type="text" placeholder="Kategori Adı" name="CategoryName" class="form-control" />-->  <!-- Buradan veri alırken veritabanı tablosu ile aynı isimde olmalı.   -->
