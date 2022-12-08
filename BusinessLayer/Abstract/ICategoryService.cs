@@ -11,5 +11,8 @@ namespace BusinessLayer.Abstract
     {
         List<Category> GetList();
         void CategoryAdd(Category category);
+        Category GetByID(int id); // IRepositoryde tanımladığımız Get metodu için parametre olarak int id'ye göre işlem yapacağını belirttik.
+        void CategoryDelete(Category category);
+        void CategoryUpdate(Category category);
     }
 }

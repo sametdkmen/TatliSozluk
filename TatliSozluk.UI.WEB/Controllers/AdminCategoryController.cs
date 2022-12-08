@@ -46,5 +46,26 @@ namespace TatliSozluk.UI.WEB.Controllers
             }
             return View();
         }
+
+        public ActionResult DeleteCategory(int id)
+        {
+            var categoryvalue = cm.GetByID(id);
+            cm.CategoryDelete(categoryvalue);
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult EditCategory(int id)
+        {
+            var categoryvalue = cm.GetByID(id);       // Önce id'yi GET ederek getiriyoruz.
+            return View(categoryvalue);
+        }
+
+        [HttpPost]
+        public ActionResult EditCategory(Category p)
+        {
+            cm.CategoryUpdate(p);
+            return RedirectToAction("Index", "AdminCategory"); // Ardından gelen id ile CategoryUpdate metodunu çalıştırıyoruz p referansı gönderip güncelletiyoruz.
+        }
     }
 }

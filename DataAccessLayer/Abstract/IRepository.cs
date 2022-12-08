@@ -13,6 +13,8 @@ namespace DataAccessLayer.Abstract
 
         void Insert(T p);
 
+        T Get(Expression<Func<T,bool>> filter); //sadece bir değer bulmak için (id) bu metodu tanımladık.
+
         void Delete(T p);
 
         void Update(T p);
